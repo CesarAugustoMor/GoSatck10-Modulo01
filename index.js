@@ -31,10 +31,12 @@ function checkUserExists(req, res, next) {
 }
 
 function checkUserInArray(req, res, next) {
-  if (!users[req.params.index]) {
+  const user = users[req.params.index];
+  if (!users) {
     return res.status(400).json({ error: "Usuario não existente" });
   }
 
+  req.user = user;
   return next();
 }
 
@@ -43,14 +45,14 @@ server.get("/users", (req, res) => {
 });
 
 server.get("/users/:index", checkUserInArray, (req, res) => {
-  const { index } = req.params;
-
-  return res.json(users[index]);
+  return res.json(req.user);
 });
 
 server.post("/users", checkUserExists, (req, res) => {
   const { name } = req.body;
+
   users.push(name);
+
   return res.json(users);
 });
 
