@@ -1,4 +1,9 @@
 {
+  "name": "backendModulo1GoStack10",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "CesarAugustoMor <cesaramfurst@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
   },
