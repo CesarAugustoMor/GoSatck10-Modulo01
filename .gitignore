@@ -3,12 +3,12 @@
 # dependencies
 /node_modules
 /.pnp
-/.vscode
 .pnp.js
 
 # testing
 /coverage
 /uploads
+/.vscode
 
 # production
 /build
